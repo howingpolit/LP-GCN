@@ -5,7 +5,7 @@ def minibatch(*tensors,batch_size):
 
     :param tensors: tuple(user_id,pos_item,neg_item)
     :param batch_size: int
-    :return:tuple(user_id,pos_item,neg_item)after split(tips:可配合for循环来按照batch_size取数据)
+    :return:tuple(user_id,pos_item,neg_item)after 
     '''
     for i in range(0,len(tensors[0]),batch_size):
         yield tuple(x[i:i+batch_size] for x in tensors)
