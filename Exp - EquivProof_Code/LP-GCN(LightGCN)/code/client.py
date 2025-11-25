@@ -257,7 +257,7 @@ class Client():
         item_all_layer_embedding=[]
         item_index=self.hash_id_to_index_of_item[item_id]
         for i in self.embedding:
-            item_embedding=i.weight.data[len(self.neighbor_users_id)+1+item_index]#用到item_index时候要非常注意，需要加上邻居的index
+            item_embedding=i.weight.data[len(self.neighbor_users_id)+1+item_index]
             item_all_layer_embedding.append(item_embedding)
         return item_all_layer_embedding
 
@@ -375,7 +375,7 @@ class Client():
             embedding_gd=self.embedding_gd.clone()
             neighbor_user_id=self.hash_index_to_id_of_neighbor_users[index]
             neighbor_users_gd[neighbor_user_id]=embedding_gd[index+1]
-            self.embedding_gd[index+1]=torch.zeros(configues["embedding_dim"])#记得对邻居用户embedding_gd清零
+            self.embedding_gd[index+1]=torch.zeros(configues["embedding_dim"])
         return neighbor_users_gd
 
     #
