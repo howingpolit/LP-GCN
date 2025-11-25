@@ -200,7 +200,7 @@ class Evalution():
             true_list = haxi_of_u_to_i_test[u_test]
             train_list = haxi_of_u_to_i_train[u_test]
             Ju = len(train_list)
-            # 计算分母部分
+            # 
             denominator = J - Ju
             RPU_sum = 0
             for i in true_list:
